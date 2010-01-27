@@ -21,7 +21,7 @@ class XMLBuilder
     <sphinx:field name="file_path"/>
     </sphinx:schema>
 
-    #{@committed_data.map { |tree| tree.map { |blob| "<sphinx:document id=\"#{blob[:id]}\"><hash_tag>#{blob[:id]}</hash_tag><file_name>#{blob[:file_name]}</file_name></sphinx:document>"} } }
+    #{@committed_data.map { |tree| tree.map { |blob| "<sphinx:document id=\"#{blob[:id]}\"><hash_tag>#{blob[:id]}</hash_tag><file_name>#{blob[:file_name]}</file_name><content>#{blob[:content]}</content></sphinx:document>"} } }
     </sphinx:docset>}
   end
   
