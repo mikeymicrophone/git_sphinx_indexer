@@ -22,6 +22,10 @@ describe XMLBuilder do
   end
   
   it 'should contain a file name for each document' do
+    @xml_builder.generate_xml(@repo).should =~ /<file_name>(\S+)<\/file_name>/m
+  end
+  
+  it 'should contain a commit tag for each document' do
     @xml_builder.generate_xml(@repo).should =~ /<hash_tag>(\S+)<\/hash_tag>/m
   end
 end
